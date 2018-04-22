@@ -13,12 +13,12 @@ export default function Header() {
 
             <nav className="mainHeaderNavigation">
                 <ol >
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/mission">Mission</Link></li>
-                    <li><Link to="/the-pledge">The Pledge</Link></li>
-                    <li><Link to="/support">Support</Link></li>
-                    <li><Link to="/partners">Partners</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/">home</Link></li>
+                    <li><Link to="/mission">mission</Link></li>
+                    <li><Link to="/the-pledge">the pledge</Link></li>
+                    <li><Link to="/support">support</Link></li>
+                    <li><Link to="/partners">partners</Link></li>
+                    <li><Link to="/contact">contact</Link></li>
                 </ol>
             </nav>
         </header>
