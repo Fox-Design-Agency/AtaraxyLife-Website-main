@@ -10,6 +10,7 @@ export default function Contact() {
             <Header />
             <div className="contactMain">
                 <h4>Contact</h4>
+                <p>If you need immediate assistance, please call 1-800-273-8255</p>
             </div>
             <Footer />
         </div>
