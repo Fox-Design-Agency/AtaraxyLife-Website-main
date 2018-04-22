@@ -1,0 +1,7 @@
+.thePledgeMain{
+    display: flex;
+    height: 300px;
+    margin-top: 120px;
+    text-align: center;
+    flex-direction: column;
+}

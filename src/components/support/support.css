@@ -1,0 +1,6 @@
+.supportMain{
+    display: flex;
+    margin-top: 88px;
+    text-align: center;
+    flex-direction: column;
+}
