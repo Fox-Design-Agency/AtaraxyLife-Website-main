@@ -28,7 +28,7 @@ module.exports = {
   createUser(req, res, next) {
     let errors = [];
     if (!req.body.name) {
-      errors.push({ text: "Please add a title." });
+      errors.push({ text: "Please add a name." });
     }
     if (!req.body.email) {
       errors.push({ text: "Email is required." });
@@ -73,7 +73,7 @@ module.exports = {
           });
         } else {
           bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(req.body.password, salt, (err, hash) => {
+            bcrypt.hash(req.body.password, salt, (err, hash)=> {
               if (err) {
                 Logger.error(err);
               }
@@ -145,7 +145,7 @@ module.exports = {
                     password: hash,
                     admin: admin
                   };
-                  CreateUser(UserProps);
+                  CreateUser(UserProps)
                   req.flash("success_msg", "Admin is now registered!");
                   res.redirect("/admin/user-controls");
                 });
