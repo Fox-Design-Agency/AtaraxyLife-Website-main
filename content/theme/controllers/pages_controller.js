@@ -8,11 +8,11 @@ module.exports = {
     const HomePage = FindPageWithParam({ slug: "home" });
     Promise.all([AllMedia, HomePage]).then(result => {
       res.render("../views/index", {
-        title: result[1].title,
-        content: result[1].content,
-        keywords: result[1].keywords,
-        description: result[1].description,
-        author: result[1].author,
+        title: result[1][0].title,
+        content: result[1][0].content,
+        keywords: result[1][0].keywords,
+        description: result[1][0].description,
+        author: result[1][0].author,
         media: result[0]
       });
     });
