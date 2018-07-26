@@ -1,4 +1,3 @@
-import AristosTextEditor from "./modules/AristosTextEditor";
 import confirmDelete from "./modules/confirmDelete";
 import MobileMenu from "./modules/MobileMenu";
 import RevealOnScroll from "./modules/RevealOnScroll";

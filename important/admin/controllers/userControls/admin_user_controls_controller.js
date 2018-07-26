@@ -1,7 +1,6 @@
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
-const Logger = require("../../../AristosStuff/AristosLogger/AristosLogger")
-  .Logger;
+const addErrorEvent = require("../../../AristosStuff/AristosLogger/AristosLogger").addError;
 /* User model Queries */
 const FindUserWithParam = require("../../adminModels/queries/user/FindUserWithParam");
 const CreateUser = require("../../adminModels/queries/user/CreateUser");
@@ -28,7 +27,7 @@ module.exports = {
   createUser(req, res, next) {
     let errors = [];
     if (!req.body.name) {
-      errors.push({ text: "Please add a name." });
+      errors.push({ text: "Please add a title." });
     }
     if (!req.body.email) {
       errors.push({ text: "Email is required." });
@@ -73,9 +72,9 @@ module.exports = {
           });
         } else {
           bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(req.body.password, salt, (err, hash)=> {
+            bcrypt.hash(req.body.password, salt, (err, hash) => {
               if (err) {
-                Logger.error(err);
+                addErrorEvent(err, "user create error");
               }
               const UserProps = {
                 name: req.body.name,
@@ -136,7 +135,7 @@ module.exports = {
               bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(password, salt, (err, hash) => {
                   if (err) {
-                    Logger.error(err);
+                    addErrorEvent(err, "user create admin error");
                   }
                   const UserProps = {
                     name: name,
@@ -145,7 +144,7 @@ module.exports = {
                     password: hash,
                     admin: admin
                   };
-                  CreateUser(UserProps)
+                  CreateUser(UserProps);
                   req.flash("success_msg", "Admin is now registered!");
                   res.redirect("/admin/user-controls");
                 });
