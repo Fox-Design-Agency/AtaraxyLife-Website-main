@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./content/public/scripts/index.js",
-    Vendor: "./content/public/scripts/Vendor.js"
+    main: "./content/public/scripts/index.js"
   },
   output: {
     path: path.resolve(__dirname, "./content/temp/scripts"),

@@ -63,9 +63,9 @@ module.exports = {
         }
 
         let title = req.body.title;
-        let slug = req.body.slug.replace(/\s+/g, "-").toLowerCase();
+        let slug = req.body.slug.replace(/s+/g, "-").toLowerCase();
         if (slug == "") {
-          slug = title.replace(/\s+/g, "-").toLowerCase();
+          slug = title.replace(/s+/g, "-").toLowerCase();
         }
         let content = req.body.content;
         let parent = req.body.parent;
@@ -182,9 +182,9 @@ module.exports = {
           errors.push({ text: "Please add content." });
         }
         let title = req.body.title;
-        let slug = req.body.slug.replace(/\s+/g, "-").toLowerCase();
+        let slug = req.body.slug.replace(/s+/g, "-").toLowerCase();
         if (slug == "") {
-          slug = title.replace(/\s+/g, "-").toLowerCase();
+          slug = title.replace(/s+/g, "-").toLowerCase();
         }
         let parent = req.body.parent;
         if (parent == "") {
@@ -196,8 +196,6 @@ module.exports = {
         let description = req.body.description;
         let id = req.params.id;
         let template = req.body.template;
-
-        console.log(template)
 
         if (errors.length > 0) {
           FindAllMedia().then(media => {
