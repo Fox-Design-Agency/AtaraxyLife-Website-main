@@ -7,7 +7,7 @@ module.exports = {
     const AllMedia = FindAllMedia();
     const HomePage = FindPageWithParam({ slug: "home" });
     Promise.all([AllMedia, HomePage]).then(result => {
-      res.render(`${result[1][0].template}`, {
+      res.render(`${result[1][0].template.path}`, {
         title: result[1][0].title,
         content: result[1][0].content,
         keywords: result[1][0].keywords,
@@ -26,7 +26,7 @@ module.exports = {
       if (result[1].length < 1) {
         res.redirect("/");
       } else {
-        if (typeof result[1][0].template !== "undefined") {
+        if (typeof result[1][0].template.path !== "undefined") {
           res.render(`${result[1][0].template}`, {
             title: result[1][0].title,
             content: result[1][0].content,
